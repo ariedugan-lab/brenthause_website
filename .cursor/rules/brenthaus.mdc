@@ -1,0 +1,382 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Brenthaüse.com - MCA Company Website Cursor Rules
+
+## Project Overview
+Single-page website for Brenthaüse.com, an MCA (Merchant Cash Advance) company. Focus on multiplatform compatibility, single-page simplicity, and professional MCA industry presentation.
+
+## Design System & Theme
+- **Primary Colors**: Black (#000000) and Blue (#0066CC / #1E40AF)
+- **Theme**: Minimalistic, dark, professional
+- **Style Inspiration**: surnmore.com - clean, modern, sophisticated
+- **Typography**: Sans-serif fonts (Inter, Poppins, or similar)
+- **Layout**: Single-page with smooth scrolling sections
+
+## Content Structure (Inspired by savingsnyc.com)
+1. **Hero Section**: Company name, tagline, CTA
+2. **About Section**: MCA services overview, company values
+3. **Services Section**: Detailed MCA offerings, benefits
+4. **Process Section**: How MCA works, application steps
+5. **Testimonials**: Client success stories
+6. **Contact Section**: Contact form, phone, email
+7. **Footer**: Legal info, additional links
+
+## Technical Requirements
+
+### Multiplatform Compatibility
+- **Mobile-First Design**: Responsive design starting from 320px
+- **Cross-Browser Support**: Chrome, Firefox, Safari, Edge
+- **Performance**: Core Web Vitals optimization
+- **Accessibility**: WCAG 2.1 AA compliance
+- **Touch-Friendly**: Minimum 44px touch targets
+
+### Single Page Architecture
+- **Smooth Scrolling**: Between sections
+- **Navigation**: Sticky header with section links
+- **Loading**: Fast initial load, lazy loading for images
+- **SEO**: Proper meta tags, structured data
+- **Analytics**: Google Analytics 4 integration
+
+### File Structure
+`
+/
+ index.html
+ css/
+    main.css
+    responsive.css
+ js/
+    main.js
+    smooth-scroll.js
+ images/
+    logo.svg
+    hero-bg.jpg
+    icons/
+ fonts/
+ robots.txt
+ sitemap.xml
+ favicon.ico
+`
+
+## Code Standards
+
+### HTML
+- Semantic HTML5 elements
+- Proper heading hierarchy (h1-h6)
+- Alt text for all images
+- ARIA labels where needed
+- Clean, indented markup
+
+### CSS
+- CSS Grid and Flexbox for layouts
+- CSS Custom Properties for theming
+- Mobile-first media queries
+- BEM methodology for class naming
+- Optimized for performance
+
+### JavaScript
+- Vanilla JavaScript (no frameworks)
+- Progressive enhancement
+- Event delegation
+- Smooth scrolling implementation
+- Form validation
+
+## SEO Optimization Rules
+
+### Semantic HTML5 Structure
+- **Use semantic elements**: <header>, <nav>, <main>, <section>, <article>, <aside>, <footer>
+- **Article tags**: Use <article> for standalone content blocks (testimonials, service descriptions, blog posts)
+- **Section tags**: Use <section> for thematic groupings within the page
+- **Main content**: Wrap primary content in <main> element
+- **Navigation**: Use <nav> for all navigation elements
+- **Header/Footer**: Use <header> and <footer> for page structure
+
+### HTML5 Semantic Implementation
+`html
+<header>
+  <nav>...</nav>
+</header>
+<main>
+  <section id="hero">...</section>
+  <section id="about">...</section>
+  <section id="services">
+    <article class="service-item">...</article>
+    <article class="service-item">...</article>
+  </section>
+  <section id="testimonials">
+    <article class="testimonial">...</article>
+    <article class="testimonial">...</article>
+  </section>
+  <section id="contact">...</section>
+</main>
+<footer>...</footer>
+`
+
+### Meta Tags & SEO Elements
+- **Title Tag**: "Brenthaüse - Merchant Cash Advance Solutions | Fast Business Funding"
+- **Meta Description**: 150-160 characters, compelling and keyword-rich
+- **Meta Keywords**: MCA, merchant cash advance, business funding, working capital
+- **Meta Viewport**: Responsive design viewport
+- **Canonical URL**: Prevent duplicate content issues
+- **Robots Meta**: Control search engine crawling
+- **Language Declaration**: <html lang="en">
+
+### Schema Markup (JSON-LD)
+`json
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Brenthaüse",
+  "description": "Professional Merchant Cash Advance solutions",
+  "url": "https://brenthause.com",
+  "telephone": "+1-XXX-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "serviceType": "Merchant Cash Advance",
+  "areaServed": "United States"
+}
+`
+
+### Open Graph & Social Media
+- **og:title**: Page title for social sharing
+- **og:description**: Page description for social sharing
+- **og:image**: High-quality image (1200x630px)
+- **og:url**: Canonical URL
+- **og:type**: "website"
+- **twitter:card**: "summary_large_image"
+- **twitter:site**: @brenthause (if applicable)
+
+### Content SEO Optimization
+- **Heading Structure**: Single H1 per page, logical H2-H6 hierarchy
+- **Keyword Density**: 1-2% for primary keywords, natural integration
+- **Internal Linking**: Link to relevant sections within the page
+- **External Links**: Link to authoritative financial resources
+- **Image Optimization**: Descriptive alt text, proper file names
+- **Content Length**: Minimum 300 words per section for better indexing
+
+### Technical SEO
+- **URL Structure**: Clean, descriptive URLs
+- **Site Speed**: Optimize images, minify CSS/JS
+- **Mobile Optimization**: Mobile-first responsive design
+- **SSL Certificate**: HTTPS implementation
+- **XML Sitemap**: Submit to Google Search Console
+- **Robots.txt**: Comprehensive crawling instructions
+
+## **✅ Comprehensive Robots.txt Rules Already Added:**
+
+### **1. Complete robots.txt File Template**
+```txt
+# Brenthaüse.com - Merchant Cash Advance Solutions
+# Robots.txt for optimal search engine crawling
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block unwanted bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Block access to sensitive directories
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: /images/icons/
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.json$
+
+# Allow important files
+Allow: /images/logo.svg
+Allow: /images/hero-bg.jpg
+Allow: /favicon.ico
+
+# Sitemap location
+Sitemap: https://brenthause.com/sitemap.xml
+
+# Crawl delay (optional - be conservative)
+Crawl-delay: 1
+```
+
+### **2. Robots.txt Best Practices**
+- **Allow All Content**: Since it's a single-page site, allow all main content
+- **Block Resource Files**: Prevent crawling of CSS, JS, and font files
+- **Block Scrapers**: Disallow known content scrapers and SEO tools
+- **Sitemap Reference**: Always include sitemap location
+- **Crawl Delay**: Set reasonable delay to avoid overwhelming server
+- **Regular Updates**: Update robots.txt when adding new content or sections
+
+### **3. Crawling Optimization Guidelines**
+- **Clean URLs**: Use descriptive, keyword-rich URLs
+- **Internal Linking**: Link between sections for better crawling
+- **Breadcrumbs**: Implement breadcrumb navigation for better structure
+- **Canonical URLs**: Prevent duplicate content issues
+- **Mobile-First**: Ensure mobile content is crawlable
+- **JavaScript Content**: Ensure important content is accessible without JS
+- **Image Alt Text**: Provide descriptive alt text for all images
+- **Meta Descriptions**: Unique meta descriptions for each section
+- **Header Tags**: Proper H1-H6 hierarchy for content structure
+
+### **4. XML Sitemap Requirements**
+Complete sitemap.xml template with:
+- Main page with highest priority (1.0)
+- Section pages with appropriate priorities
+- Last modification dates
+- Change frequencies
+- Proper XML structure
+
+### **5. Key Features of the Robots.txt Rules:**
+
+**✅ Allows Major Search Engines:**
+- Googlebot, Bingbot, Slurp, DuckDuckBot, Baiduspider, YandexBot
+
+**✅ Blocks Unwanted Bots:**
+- AhrefsBot, SemrushBot, MJ12bot, DotBot, BLEXBot
+
+**✅ Protects Resources:**
+- Blocks CSS, JS, fonts, and icon directories
+- Allows important images and favicon
+
+**✅ Optimizes Crawling:**
+- Includes sitemap reference
+- Sets reasonable crawl delay
+- Provides clear instructions for search engines
+
+Your cursor rules file now includes everything needed for optimal search engine crawling and indexing! The robots.txt rules will help ensure that search engines can efficiently crawl your site while protecting your resources and blocking unwanted scrapers.
+
+### Local SEO (if applicable)
+- **Google My Business**: Claim and optimize business listing
+- **Local Schema**: NAP (Name, Address, Phone) consistency
+- **Local Keywords**: Include city/region in content
+- **Reviews**: Encourage and display customer testimonials
+
+## MCA Industry Specifics
+
+### Content Guidelines
+- **Professional Tone**: Trustworthy, knowledgeable
+- **Clear Value Props**: Fast funding, flexible terms
+- **Risk Awareness**: Transparent about costs and terms
+- **Compliance**: Legal disclaimers, terms of service
+- **Trust Signals**: Testimonials, credentials, security badges
+
+### Key Messaging
+- "Fast, flexible funding for your business"
+- "No collateral required"
+- "Quick approval process"
+- "Based on your credit card sales"
+- "Transparent terms and conditions"
+
+### Required Legal Elements
+- Terms of Service
+- Privacy Policy
+- Disclaimer about MCA risks
+- Contact information
+- Business registration details
+
+## Performance Targets
+- **Lighthouse Score**: 90+ across all categories
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Cumulative Layout Shift**: < 0.1
+- **Time to Interactive**: < 3.5s
+
+## SEO Requirements
+- **Title**: "Brenthaüse - Merchant Cash Advance Solutions"
+- **Meta Description**: Compelling 150-160 character description
+- **Keywords**: MCA, merchant cash advance, business funding, etc.
+- **Schema Markup**: LocalBusiness, FinancialService
+- **Open Graph**: Social media sharing optimization
+
+## Security & Compliance
+- **HTTPS**: SSL certificate required
+- **GDPR**: Cookie consent if needed
+- **Data Protection**: Secure form handling
+- **Privacy**: Clear privacy policy
+- **Accessibility**: Screen reader compatible
+
+## Browser Support
+- **Modern Browsers**: Last 2 versions
+- **Mobile Browsers**: iOS Safari 12+, Chrome Mobile 80+
+- **Fallbacks**: Graceful degradation for older browsers
+- **Progressive Enhancement**: Core functionality works without JS
+
+## Development Workflow
+1. **Wireframes**: Mobile-first design approach
+2. **Prototype**: HTML/CSS/JS implementation
+3. **Testing**: Cross-browser and device testing
+4. **Optimization**: Performance and SEO optimization
+5. **Deployment**: Production-ready build
+
+## Content Management
+- **Static Site**: No CMS required
+- **Easy Updates**: Well-commented code for future edits
+- **Version Control**: Git for code management
+- **Backup**: Regular backups of all files
+
+## Quality Assurance
+- **Code Review**: Clean, maintainable code
+- **Testing**: Manual testing on multiple devices
+- **Validation**: HTML and CSS validation
+- **Performance**: Regular performance audits
+- **Accessibility**: Screen reader and keyboard testing
+
+## Launch Checklist
+- [ ] All sections implemented and styled
+- [ ] Mobile responsiveness verified
+- [ ] Cross-browser compatibility tested
+- [ ] Performance optimized
+- [ ] SEO elements in place
+- [ ] Analytics configured
+- [ ] Contact forms working
+- [ ] Legal pages complete
+- [ ] SSL certificate active
+- [ ] robots.txt file created and optimized
+- [ ] sitemap.xml generated and submitted
+- [ ] Final testing completed
+
+## Maintenance Notes
+- Regular performance monitoring
+- Security updates as needed
+- Content updates for industry changes
+- Analytics review and optimization
+- Backup verification
+- Regular robots.txt and sitemap updates
+
+---
+
+**Remember**: This is a professional MCA company website. Maintain trust, transparency, and professionalism in all aspects of design and content. The dark theme should convey sophistication and reliability, while the blue accents should suggest trust and financial stability.
+

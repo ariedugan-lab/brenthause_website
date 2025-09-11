@@ -1,0 +1,60 @@
+﻿# Brenthaüse.com - Merchant Cash Advance Solutions
+# Robots.txt for optimal search engine crawling
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block unwanted bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Block access to sensitive directories
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: /images/icons/
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.json$
+
+# Allow important files
+Allow: /images/logo.svg
+Allow: /images/hero-bg.jpg
+Allow: /favicon.ico
+
+# Sitemap location
+Sitemap: https://brenthause.com/sitemap.xml
+
+# Crawl delay (optional - be conservative)
+Crawl-delay: 1

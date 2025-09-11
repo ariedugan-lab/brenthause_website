@@ -1,0 +1,148 @@
+﻿/* Brenthaüse.com - Responsive Styles */
+/* Mobile-first responsive design */
+
+/* Mobile Styles (320px and up) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .nav__menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+  
+  .nav__menu--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav__toggle {
+    display: flex;
+  }
+  
+  .nav__toggle--open .nav__toggle-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .nav__toggle--open .nav__toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav__toggle--open .nav__toggle-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__cta {
+    justify-content: center;
+  }
+  
+  .about__features {
+    grid-template-columns: 1fr;
+  }
+  
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process__steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer__links {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero__container {
+    gap: 3rem;
+  }
+  
+  .about__features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .process__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Styles (1025px and up) */
+@media (min-width: 1025px) {
+  .hero__title {
+    font-size: 4rem;
+  }
+  
+  .about__features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .process__steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .testimonials__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large Desktop Styles (1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .hero__title {
+    font-size: 4.5rem;
+  }
+}
