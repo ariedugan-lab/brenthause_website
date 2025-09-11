@@ -53,6 +53,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation
     const contactForm = document.querySelector('.contact__form');
     if (contactForm) {
+        // Phone input masking
+        const phoneInput = contactForm.querySelector('#phone');
+        const countryCode = contactForm.querySelector('#country_code');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function() {
+                const numbers = this.value.replace(/\D/g, '').slice(0, 10);
+                const parts = [];
+                if (numbers.length > 0) parts.push(numbers.slice(0, 3));
+                if (numbers.length > 3) parts.push(numbers.slice(3, 6));
+                if (numbers.length > 6) parts.push(numbers.slice(6, 10));
+                this.value = parts
+                    .map((p, idx) => (idx === 0 ? p : p.padStart(idx === 1 ? 3 : 4, '')))
+                    .join('-');
+            });
+        }
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             validateForm(this);
@@ -109,7 +125,7 @@ function validateForm(form) {
     });
     
     requiredFields.forEach(field => {
-        const errorElement = document.getElementById(field.name + '-error');
+        const errorElement = document.getElementById(field.id + '-error');
         
         if (!field.value.trim()) {
             showError(field, errorElement, 'This field is required');
@@ -119,11 +135,20 @@ function validateForm(form) {
             isValid = false;
         }
     });
+
+    // Phone format validation (111-111-1111)
+    const phoneInput = form.querySelector('#phone');
+    if (phoneInput && phoneInput.value.trim()) {
+        const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+        if (!phonePattern.test(phoneInput.value)) {
+            const phoneError = document.getElementById('phone-error');
+            showError(phoneInput, phoneError, 'Use format 111-111-1111');
+            isValid = false;
+        }
+    }
     
     if (isValid) {
-        // Here you would typically send the form data to a server
-        showSuccessMessage('Thank you for your message! We will get back to you soon.');
-        form.reset();
+        form.submit();
     }
 }
 

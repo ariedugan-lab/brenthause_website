@@ -768,6 +768,21 @@ a:hover {
   display: block;
 }
 
+/* Inline input group for phone */
+.input-inline {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: var(--spacing-sm);
+}
+
+.input-inline__code {
+  min-width: 100px;
+}
+
+.input-inline__phone {
+  width: 100%;
+}
+
 /* Footer */
 .footer {
   background-color: var(--color-primary);

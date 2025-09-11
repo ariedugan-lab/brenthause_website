@@ -385,11 +385,17 @@
                 </div>
                 
                 <div class="contact__form-container">
-                    <form class="contact__form" action="#" method="POST" novalidate>
+                    <form class="contact__form" action="https://formbold.com/s/9xllj" method="POST" novalidate>
                         <div class="form-group">
-                            <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
-                            <div id="name-error" class="form-error" role="alert"></div>
+                            <label for="first_name" class="form-label">First Name *</label>
+                            <input type="text" id="first_name" name="first_name" class="form-input" required aria-describedby="first_name-error">
+                            <div id="first_name-error" class="form-error" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last_name" class="form-label">Last Name *</label>
+                            <input type="text" id="last_name" name="last_name" class="form-input" required aria-describedby="last_name-error">
+                            <div id="last_name-error" class="form-error" role="alert"></div>
                         </div>
                         
                         <div class="form-group">
@@ -400,7 +406,15 @@
                         
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" aria-describedby="phone-error">
+                            <div class="input-inline">
+                                <select id="country_code" name="country_code" class="form-select input-inline__code" aria-label="Country code">
+                                    <option value="+1" selected>+1</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+91">+91</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" class="form-input input-inline__phone" aria-describedby="phone-error">
+                            </div>
                             <div id="phone-error" class="form-error" role="alert"></div>
                         </div>
                         
@@ -408,18 +422,6 @@
                             <label for="business" class="form-label">Business Name</label>
                             <input type="text" id="business" name="business" class="form-input" aria-describedby="business-error">
                             <div id="business-error" class="form-error" role="alert"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="amount" class="form-label">Funding Amount Needed</label>
-                            <select id="amount" name="amount" class="form-select">
-                                <option value="">Select amount range</option>
-                                <option value="5k-25k">,000 - ,000</option>
-                                <option value="25k-50k">,000 - ,000</option>
-                                <option value="50k-100k">,000 - ,000</option>
-                                <option value="100k-250k">,000 - ,000</option>
-                                <option value="250k+">,000+</option>
-                            </select>
                         </div>
                         
                         <div class="form-group">
