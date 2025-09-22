@@ -116,18 +116,20 @@ document.addEventListener('DOMContentLoaded', function() {
 function validateForm(form) {
     const requiredFields = form.querySelectorAll('[required]');
     let isValid = true;
-    
+
     // Clear previous errors
     const errorElements = form.querySelectorAll('.form-error');
     errorElements.forEach(error => {
         error.classList.remove('show');
         error.textContent = '';
     });
-    
+
+    // Basic required + email validation
     requiredFields.forEach(field => {
         const errorElement = document.getElementById(field.id + '-error');
-        
-        if (!field.value.trim()) {
+        const value = (field.type === 'file') ? (field.files && field.files.length ? 'has-files' : '') : field.value.trim();
+
+        if (!value) {
             showError(field, errorElement, 'This field is required');
             isValid = false;
         } else if (field.type === 'email' && !isValidEmail(field.value)) {
@@ -146,7 +148,30 @@ function validateForm(form) {
             isValid = false;
         }
     }
-    
+
+    // Revenue must be a positive number
+    const revenueInput = form.querySelector('#monthly_revenue');
+    if (revenueInput) {
+        const raw = String(revenueInput.value || '').replace(/[,\s]/g, '');
+        const revenue = parseFloat(raw);
+        if (!(revenue > 0)) {
+            const revenueError = document.getElementById('monthly_revenue-error');
+            showError(revenueInput, revenueError, 'Enter a positive amount');
+            isValid = false;
+        }
+    }
+
+    // At least 4 bank statements must be uploaded
+    const statementsInput = form.querySelector('#bank_statements');
+    if (statementsInput) {
+        const count = (statementsInput.files && statementsInput.files.length) || 0;
+        if (count < 4) {
+            const statementsError = document.getElementById('bank_statements-error');
+            showError(statementsInput, statementsError, 'Upload at least 4 bank statements');
+            isValid = false;
+        }
+    }
+
     if (isValid) {
         form.submit();
     }

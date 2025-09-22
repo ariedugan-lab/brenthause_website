@@ -46,13 +46,89 @@
         <section class="section" aria-labelledby="apply-title">
             <div class="container">
                 <h1 id="apply-title">Apply Now</h1>
-                <p class="mb-4">Were setting up a streamlined application experience. An embedded, secure application form will appear here soon.</p>
-                <div class="section">
-                    <div style="background:#111;border:1px solid #333;border-radius:12px;padding:24px;text-align:center;">
-                        <p class="mb-3">Application portal coming soon.</p>
-                        <a href="index.html#contact" class="btn btn--secondary">Contact Us</a>
+                <form id="application-form" class="contact__form" action="https://formbold.com/s/9Xrp0" method="POST" enctype="multipart/form-data" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="business_name">Business Name</label>
+                        <input class="form-input" type="text" id="business_name" name="business_name" placeholder="ACME Inc." required>
+                        <div id="business_name-error" class="form-error"></div>
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="first_name">First Name</label>
+                        <input class="form-input" type="text" id="first_name" name="first_name" placeholder="John" required>
+                        <div id="first_name-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="middle_initial">Middle Initial</label>
+                        <input class="form-input" type="text" id="middle_initial" name="middle_initial" placeholder="M" maxlength="1" pattern="[A-Za-z]">
+                        <div id="middle_initial-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="last_name">Last Name</label>
+                        <input class="form-input" type="text" id="last_name" name="last_name" placeholder="Doe" required>
+                        <div id="last_name-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <div class="input-inline">
+                            <select class="form-select input-inline__code" id="country_code" name="country_code">
+                                <option value="+1" selected>+1 (US)</option>
+                            </select>
+                            <input class="form-input input-inline__phone" type="tel" id="phone" name="phone" placeholder="111-111-1111" inputmode="numeric" required>
+                        </div>
+                        <div id="phone-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-input" type="email" id="email" name="email" placeholder="you@business.com" required>
+                        <div id="email-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="credit_score">Estimated Credit Score</label>
+                        <select class="form-select" id="credit_score" name="credit_score" required>
+                            <option value="" disabled selected>Select your range</option>
+                            <option value="300-579">300-579 (Poor)</option>
+                            <option value="580-669">580-669 (Fair)</option>
+                            <option value="670-739">670-739 (Good)</option>
+                            <option value="740-799">740-799 (Very Good)</option>
+                            <option value="800-850">800-850 (Excellent)</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                        <div id="credit_score-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="company_size">Company Size</label>
+                        <select class="form-select" id="company_size" name="company_size" required>
+                            <option value="" disabled selected>Select company size</option>
+                            <option value="1-4">1-4 employees</option>
+                            <option value="5-19">5-19 employees</option>
+                            <option value="20-49">20-49 employees</option>
+                            <option value="50-99">50-99 employees</option>
+                            <option value="100+">100+ employees</option>
+                        </select>
+                        <div id="company_size-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="monthly_revenue">Average Monthly Revenue (USD)</label>
+                        <input class="form-input" type="number" id="monthly_revenue" name="monthly_revenue" placeholder="50000" min="0" step="100" required>
+                        <div id="monthly_revenue-error" class="form-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="bank_statements">Proof of Revenue (Upload at least 4 recent bank statements)</label>
+                        <input class="form-input" type="file" id="bank_statements" name="bank_statements[]" accept="application/pdf,image/*" multiple required>
+                        <div id="bank_statements-error" class="form-error"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">Submit Application</button>
+                </form>
             </div>
         </section>
     </main>
